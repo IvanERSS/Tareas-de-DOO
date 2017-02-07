@@ -1,0 +1,76 @@
+<html>
+
+	<head>
+	
+	
+	</head>
+	
+	
+	<body>
+	
+		<label>Nombre: </label> </br>
+		<input id="TXT-nom" type="text" value="" /> </br>
+		
+		<label>Apellidos: </label> </br>
+		<input id="TXT-app" type="text" value="" /> </br>
+		<input id="TXT-apm" type="text" value="" /> </br>
+		
+		<label>Fecha de nacimiento(solamente año): </label> </br>
+		<input id="TXT-fechaNacimiento" type="text" value="" /> </br>
+		
+		<label>Genero: </label> </br>
+		<select id="SCT-Genero">
+			<option value="H">H</option>
+			<option value="M">M</option>
+		</select>				
+		
+		</br>
+		<input type="button" value="Imprimir" onclick="RFC()"/>
+		</br>
+		<label id="LBL-mostar"></label>
+			
+	</body>
+	
+		<script>
+			
+			/*function imprimir() {
+				var label = document.getElementById("LBL-mostar");
+				label.innerHTML = RFC();
+			}*/
+			
+			function RFC(){
+				var rfc = "";
+				var str = document.getElementById("TXT-app").value; //Apellido paterno
+				 rfc = rfc + str.substring(0,2);
+				 str = document.getElementById("TXT-apm").value; //Apellido materno
+				 rfc = rfc + str.substring(0,1);
+				 str = document.getElementById("TXT-nom").value; //Apellido nombre
+				 rfc = rfc + str.substring(0,1);
+				 str = document.getElementById("TXT-fechaNacimiento").value; //fechaNacimiento
+				 rfc = rfc + str.substring(2,4);
+				 str = document.getElementById("SCT-Genero").value; //Genero
+				 rfc = rfc + str.substring(0,2);
+				document.getElementById("LBL-mostar").innerHTML = rfc;
+				
+			}
+			
+		</script>
+
+	
+</html>
+
+<!-- 
+Mostrar RFC
+
+RO
+S
+I
+98
+H
+
+1998
+(2,4)
+
+
+
+ -->
